@@ -57,5 +57,28 @@ pub fn run() {
     // Rustでは配列の値は決まっていないといけない。そのため全てStackに積まれていく
     let a1 = [1, 2, 3, 4, 5];
     let a2 = [0; 10];
-    println!("{:?} {:?} {} {}", a1, a2, a1[2], a1[3]); // [1, 2, 3, 4, 5] [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 3 4
+    println!("{:?} {:?} {} {}", a1, a2, a1[2], a1[3]); // [1, 2, 3, 4, 5] [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 3 4が出力される
+
+    let s1 = "helloこんにちは挨拶"; // 26byte
+    let s2 = "hello"; // 5byte
+    println!("stack address of const is: {:p}", &s1);
+    println!("stack address of const is: {:p}", &s2);
+    println!("stack address of const s1 is: {:p}", s1.as_ptr());
+    println!("stack address of const s2 is: {:p}", s2.as_ptr());
+    println!("stack address of const s1 is: {}", s1.len());
+    println!("stack address of const s2 is: {}", s2.len());
+
+    let mut s1 = String::from("hello");
+    let mut s2 = String::from("helloworld");
+    println!("stack address s1 is: {:p}", &s1);
+    println!("stack address s2 is: {:p}", &s2);
+    println!("stack address s1 is: {:p}", s1.as_ptr());
+    println!("stack address s2 is: {:p}", s2.as_ptr());
+    println!("stack address s1 is: {}", s1.len());
+    println!("stack address s2 is: {}", s2.len());
+    println!("stack address s1 is: {}", s1.capacity());
+    println!("stack address s2 is: {}", s2.capacity());
+    s1.push_str("_new1");
+    s2.push_str("_new2");
+    println!("{} {}", s1, s2)
 }
