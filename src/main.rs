@@ -1,7 +1,9 @@
-mod vars;
+mod stack_heap;
+// mod vars;
 
 fn main() {
     // println!("Hello, world!");
-    vars::run();
+    // vars::run();
+    stack_heap::run();
     // vars::sub_a::func_a()
 }
