@@ -2,7 +2,9 @@
 // mod vars;
 // mod ownership;
 // mod generics;
-mod lifetime;
+// mod lifetime;
+mod enums;
+// mod structs;
 
 fn main() {
     // println!("Hello, world!");
@@ -11,5 +13,7 @@ fn main() {
     // vars::sub_a::func_a()
     // ownership::run();
     // generics::run();
-    lifetime::run();
+    // lifetime::run();
+    // structs::run();
+    enums::run();
 }
